@@ -18,7 +18,13 @@
 
 int main(int argc, char *argv[]) {
 	vita2d_init();
-	font = vita2d_load_font_file("app0:Roboto-Regular.ttf");
+
+	struct SceIoStat * fontStat = (SceIoStat*)malloc(sizeof(SceIoStat));
+	if (sceIoGetstat("ux0:data/ElevenMPV/font.ttf", fontStat) < 0) {
+		font = vita2d_load_font_file("app0:Roboto-Regular.ttf");
+	} else {
+		font = vita2d_load_font_file("ux0:data/ElevenMPV/font.ttf");
+	}
 	Textures_Load();
 
 	sceIoMkdir("ux0:data/ElevenMPV", 0777);

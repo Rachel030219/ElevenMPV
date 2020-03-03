@@ -2,6 +2,8 @@
 
 A homebrew music player for Playstation VITA that aims to support many different audio formats compared to the offical PS VITA music application.
 
+**To display CJK / special characters correctly or change the font style, please put your own font at `ux0:data/ElevenMPV/font.ttf` . PGF support should be on the way but it'll take much time as I'm not a experienced C dev by any means.** 
+
 
 # Currently supported formats: (16 bit signed samples)
 - FLAC
